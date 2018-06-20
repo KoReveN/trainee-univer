@@ -19,7 +19,8 @@ namespace TraineeWebApi.Controllers
         // GET: api/StudentSubjects
         public IQueryable<StudentSubject> GetStudentSubjects()
         {
-            return db.StudentSubjects.Include(s => s.Subject).Include(s => s.Student);
+            //return db.StudentSubjects.Include(s => s.Subject); // Работает
+            return db.StudentSubjects.Include(s => s.Subject).Include(s => s.Student);//
 
             //.Include(s => s.Student).Include(s => s.Subject)
 
