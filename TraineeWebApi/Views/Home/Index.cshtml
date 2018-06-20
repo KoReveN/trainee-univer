@@ -1,0 +1,141 @@
+﻿<!--  -->
+<!-- Реализую сделаное на JS *******************************************-->
+<div id="pageStudentsInGroupSubjectInfo" style="display: none">
+    <!--  -->
+    <div class="row justify-content-center">
+        <div id="studentsInGroupWithSubject" class="h1">Результаты студентов по группам</div>
+    </div>
+    <div class="container row justify-content-center " id="subjectsBtnListByGroup"></div>
+
+    <div id="divTable">
+        <table class="table table-striped table-hover" id="tableResultByGroup">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Студент</td>
+                    <td>Средний бал</td>
+                    <td>Часов в предмете</td>
+                    <td>Часов посещено</td>
+                    <td>Экзаменационный бал</td>
+                    <td>Общий бал</td>
+                    <td style='display: none'>Group ID</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+
+        </table>
+    </div>
+    <button type="button" id="addStudentButton" class="btn btn-outline-success">Добавить студента</button>
+</div>
+
+
+<!-- 1. Распределение студентов по группам              OK-->
+<!-- 2. Предметы в группах                              OK -->
+<!-- 3. Результат по группам (студент - предмет)        OK -->
+<!-- 4. Результат по предметам / студентам     + отдельно -->
+<!-- Данные по одному студенту в модальном окне + img -->
+<!-- Минимальная админка... Добавление студента.. -->
+<!-- Disable ссылки.. -->
+<!-- style="display: none" -->
+<div id="pageGroupInfo">
+</div>
+
+
+
+<!-- Modal  FROM (Add student)-->
+<div class="modal fade" id="modalFormStudent" tabindex="-1" role="dialog" aria-labelledby="modalFormStudent" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title_add" id="exampleModalLongTitleAdd">Добавление студента</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body_add">
+                <form action="/action_page.php">
+                    <div class="form-group">
+                        <label for="name">Имя:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Введите имя студента" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Возраст:</label>
+                        <input type="text" class="form-control" id="age" placeholder="Укажите возраст студента" name="age">
+                    </div>
+                    <div class="form-group">
+                        <label for="sel1">Група:</label>
+                        <select class="form-control" id="selGroupForNewStudent"></select>
+                    </div>
+                    <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button type="button" id="addStudentSaveBtn" class="btn btn-primary">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div id="group" class=" col-6 "></div>
+                    <div id="age" class=" col-6 "></div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-7 ">Предметы:</div>
+                </div>
+                <div id="studetnSubjectsInfo">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@*<div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
+            a broad range of clients, including browsers and mobile devices. ASP.NET Web API
+            is an ideal platform for building RESTful applications on the .NET Framework.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
+        </div>
+    </div>*@

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="nav-link navbar-brand " id="groupsLink" href="#">Групы</a>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <!-- active -->
+                    <a class="nav-link active" id="groupsSubjectLink" href="#">Расписание*</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">****</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Админка</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Група</a>
+                    <div class="dropdown-menu" id="groupDropDownList" aria-labelledby="dropdown01">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    @Scripts.Render("~/Scripts/AjaxScript.js")
+    @Scripts.Render("~/Scripts/univer.js")
+    @Scripts.Render("~/Scripts/selectPage.js")
+    @Scripts.Render("~/Scripts/modal.js")
+    @Scripts.Render("~/Scripts/univer_table.js")
+
+</body>
+</html>
